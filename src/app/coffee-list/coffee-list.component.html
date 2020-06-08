@@ -1,0 +1,24 @@
+<div class="card my-5">
+  <div class="card-body">
+    <alert></alert>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">CoffeeName</th>
+          <th scope="col">CoffeeDescription</th>
+          <th scope="col">CoffeePrice</th>
+          <th scope="col">options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coffee of coffees">
+          <td>{{ coffee.coffeeName }}</td>
+          <td>{{ coffee.coffeeDescription }}</td>
+          <td>{{ coffee.coffeePrice }}</td>
+          <td><a (click)="setSelectedCoffee(coffee)" class="btn btn-info">edit</a><a (click)="deleteConfirmation(coffee)" class="btn btn-info">delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

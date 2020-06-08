@@ -1,0 +1,69 @@
+<div class="card my-5">
+  <div class="card-body">
+    <alert></alert>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">coffee name</th>
+          <th scope="col">coffee Code</th>
+          <th scope="col">placed by user</th>
+          <th scope="col">amount of sugar</th>
+          <th scope="col">amount of milk</th>
+          <th scope="col">select</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let orderdetail of orderdetails">
+          <td>{{ orderdetail.coffeeName }}</td>
+          <td>{{ orderdetail.coffeeCode }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ orderdetail.amountOfSugar }}</td>
+          <td>{{ orderdetail.amountOfMilk }}</td>
+          <td><input type="checkbox" name="orderDetailSelect" id="{{orderdetail.orderDetailId}}"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button mat-button (click)="getSelectedOrderDetail()">select</button>
+    </div>
+  </div>
+</div>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">coffee Id</th>
+          <th scope="col">coffee name</th>
+          <th scope="col">coffee Code</th>
+          <th scope="col">placed by user</th>
+          <th scope="col">amount of sugar</th>
+          <th scope="col">amount of milk</th>
+          <th scope="col">select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let orderdetail of selectedOrderdetails">
+          <td>{{ orderdetail.orderDetailId }}</td>
+          <td>{{ orderdetail.coffeeId }}</td>
+          <td>{{ orderdetail.coffeeName }}</td>
+          <td>{{ orderdetail.coffeeCode }}</td>
+          <td>{{ orderdetail.placedByUserId }}</td>
+          <td>{{ orderdetail.amountOfSugar }}</td>
+          <td>{{ orderdetail.amountOfMilk }}</td>
+          <td><input type="checkbox" name="orderDetailRemoveSelect" id="{{orderdetail.orderDetailId}}"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button mat-button (click)="makeOrder()">place order</button>
+    </div>
+    <div>
+      <button mat-button (click)="removeSelectedOrderDetail()">remove selected</button>
+    </div>
+  </div>
+</div>
+
+

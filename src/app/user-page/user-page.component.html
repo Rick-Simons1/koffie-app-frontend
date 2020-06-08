@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-sm-10">
+    <h1>{{user.username}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3">
+    <!--left col-->
+
+    <ul class="list-group">
+      <li class="list-group-item text-muted">Profile</li>
+      <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> {{user.name}}</li>
+      <li class="list-group-item text-right"><span class="pull-left"><strong>username</strong></span> {{user.username}}</li>
+
+
+    </ul>
+
+    <ul class="list-group">
+      <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+      <li class="list-group-item text-right"><span class="pull-left"><strong>coffees ordered</strong></span> {{user.amountOfCoffeesOrdered}}</li>
+      <li class="list-group-item text-right"><span class="pull-left"><strong>orders delivered</strong></span> {{user.amountOfOrdersDelivered}}</li>
+    </ul>
+  </div>
+  </div>
+  <div>
+    <a (click)="onClick()" class="btn btn-info">edit</a>
+  </div>
+  <div>
+    <a (click)="onClickPassword()" class="btn btn-info">edit password</a>
+  </div>
+  <!--/col-3-->
+

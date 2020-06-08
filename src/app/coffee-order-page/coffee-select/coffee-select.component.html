@@ -1,0 +1,32 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">CoffeeName</th>
+          <th scope="col">CoffeeDescription</th>
+          <th scope="col">CoffeePrice</th>
+          <th scope="col">choose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coffee of coffees">
+          <td>{{ coffee.coffeeName }}</td>
+          <td>{{ coffee.coffeeDescription }}</td>
+          <td>{{ coffee.coffeePrice }}</td>
+          <td><input type="radio" name="coffeeSelect" id="{{coffee.id}}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div>
+  <label>amount of milk between 0 and 5</label>
+  <input matInput type="number" #milk name="milk" min="0" max="5" value=""/>
+  <label>amount of sugar between 0 and 5</label>
+  <input matInput type="number" #sugar name="sugar" min="0" max="5" value="" />
+  <button mat-button (click)="getSelectedCoffee(sugar.value, milk.value)">select</button>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+</div>

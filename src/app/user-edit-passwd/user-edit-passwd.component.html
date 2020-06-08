@@ -1,0 +1,31 @@
+<div class="card my-5">
+  <div class="card-body">
+    <alert></alert>
+    <form (ngSubmit)="onSubmit()" #editpasswdForm="ngForm">
+      <div class="form-group">
+        <label for="oldPasswd">old password</label>
+        <input type="text" [(ngModel)]="passwd.oldPasswd"
+               class="form-control"
+               id="oldPasswd"
+               name="oldPasswd"
+               placeholder="Enter your old password"
+               required #oldPasswd="ngModel">
+      </div>
+      <div [hidden]="!oldPasswd.pristine" class="alert alert-danger">the old password is required</div>
+      <div class="form-group">
+        <label for="newPasswd">new password</label>
+        <input type="text" [(ngModel)]="passwd.newPasswd"
+               class="form-control"
+               id="newPasswd"
+               name="newPasswd"
+               placeholder="Enter the new password"
+               required #newPasswd="ngModel">
+        <div [hidden]="!newPasswd.pristine" class="alert alert-danger">the new password is required</div>
+      </div>
+      <button type="submit" [disabled]="!editpasswdForm.form.valid"
+              class="btn btn-info">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

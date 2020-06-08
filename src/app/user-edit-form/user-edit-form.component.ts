@@ -10,7 +10,7 @@ import { AlertService } from '../_alert';
 })
 export class UserEditFormComponent implements OnInit {
 
-  user: User;
+  user: any = {};
   constructor(private userService: UserService, private alertService: AlertService) { }
 
   ngOnInit(): void {
@@ -26,10 +26,12 @@ export class UserEditFormComponent implements OnInit {
     if (result === '{"response":"success"}') {
       msg = "succesfully updated the useraccount";
       this.alertService.success(msg)
+      return msg;
     }
     else {
       msg = "username already exists";
       this.alertService.error(msg)
+      return msg;
     }
   }
 

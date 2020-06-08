@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UserPageComponent implements OnInit {
 
-  user: User
+  user: any = {}
 
   constructor(private userservice: UserService, private router: Router) {
     this.userservice.getLoggedInUser().subscribe(result => { this.user = result })

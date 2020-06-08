@@ -8,7 +8,7 @@ import { AlertService } from '../_alert';
   providedIn: 'root'
 })
 export class selectedCoffeeService {
-  public coffee: Coffee;
+  public coffee: any = {};
 }
 
 @Component({
@@ -31,8 +31,11 @@ export class CoffeeListComponent implements OnInit {
   }
 
   public setSelectedCoffee(coffee: Coffee) {
-    
     this.coffeeData.coffee = coffee;
+    return this.coffeeData.coffee
+  }
+
+  public navigate() {
     this.router.navigate(['/editCoffee']);
   }
 
@@ -47,6 +50,7 @@ export class CoffeeListComponent implements OnInit {
     if (result === '{"response":"success"}') {
       msg = "succesfully deleted the coffee";
       this.alertService.success(msg)
+      return msg;
     }
     
 

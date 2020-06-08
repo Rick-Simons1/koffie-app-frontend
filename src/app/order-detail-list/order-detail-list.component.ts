@@ -17,7 +17,7 @@ import { AlertService } from '../_alert';
 })
 export class OrderDetailListComponent implements OnInit {
 
-  user: User;
+  user: any = {};
   orderdetails: OrderDetail[];
   selectedOrderdetails: OrderDetail[];
 
@@ -56,6 +56,7 @@ export class OrderDetailListComponent implements OnInit {
     if (result === '{"response":"success"}') {
       msg = "succesfully placed the order";
       this.alertService.success(msg)
+      return msg;
     }
   }
 

@@ -12,7 +12,7 @@ import { AlertService } from '../_alert';
 export class UserEditPasswdComponent implements OnInit {
 
   passwd: PasswdModel
-  user: User;
+  user: any = {}
 
   constructor(private userService: UserService, private alertService: AlertService) { }
 
@@ -30,9 +30,12 @@ export class UserEditPasswdComponent implements OnInit {
     if (result === '{"response":"success"}') {
       msg = "succesfully changed the password";
       this.alertService.success(msg)
+      return msg;
     }
     else {
       msg = "oldpassword didnt match the current password"
+      this.alertService.success(msg);
+      return msg;
     }
 
 

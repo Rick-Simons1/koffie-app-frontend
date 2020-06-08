@@ -6,28 +6,28 @@
           <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
           <ul class="text-center list-inline py-3">
             <li class="list-inline-item">
-              <a routerLink="/login" *ngIf="!loggedIn" class="btn btn-info">login</a>
+              <a routerLink="/login" *ngIf="!loginService.loggedIn" class="btn btn-info">login</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/register" *ngIf="!loggedIn" class="btn btn-info">register</a>
+              <a routerLink="/register" *ngIf="!loginService.loggedIn" class="btn btn-info">register</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/login" *ngIf="loggedIn" class="btn btn-info" (click)="logout()">logout</a>
+              <a routerLink="/login" *ngIf="loginService.loggedIn" class="btn btn-info" (click)="logout()">logout</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/coffees" *ngIf="(loggedIn && isAdmin)" class="btn btn-info">List coffees</a>
+              <a routerLink="/coffees" *ngIf="(loginService.loggedIn && loginService.admin)" class="btn btn-info">List coffees</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/addCoffee" *ngIf="(loggedIn && isAdmin)" class="btn btn-info">Add coffee</a>
+              <a routerLink="/addCoffee" *ngIf="(loginService.loggedIn && loginService.admin)" class="btn btn-info">Add coffee</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/orderCoffee" *ngIf="loggedIn" class="btn btn-info">order coffee</a>
+              <a routerLink="/orderCoffee" *ngIf="loginService.loggedIn" class="btn btn-info">order coffee</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/orderDetails" *ngIf="loggedIn" class="btn btn-info">make order</a>
+              <a routerLink="/orderDetails" *ngIf="loginService.loggedIn" class="btn btn-info">make order</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/account" *ngIf="loggedIn" class="btn btn-info">account page</a>
+              <a routerLink="/account" *ngIf="loginService.loggedIn" class="btn btn-info">account page</a>
             </li>
 
           </ul>

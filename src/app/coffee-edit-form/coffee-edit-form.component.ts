@@ -13,10 +13,11 @@ import { AlertService } from '../_alert';
 })
 export class CoffeeEditFormComponent implements OnInit {
 
-  coffee: Coffee;
+  coffee: any = {};
   
 
   constructor(private route: ActivatedRoute, private router: Router, private coffeeService: CoffeeService, private coffeeData: selectedCoffeeService, private alertService: AlertService) {
+    this.coffee.coffeeName = "";
     this.coffee = coffeeData.coffee;
   }
 
@@ -31,10 +32,12 @@ export class CoffeeEditFormComponent implements OnInit {
     if (result === '{"response":"succes"}') {
       msg = "succesfully changed the coffee";
       this.alertService.success(msg)
+      return msg;
     }
     else {
       msg = "name already exists";
       this.alertService.error(msg)
+      return msg;
     }
     
   }

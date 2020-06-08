@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from './service/user.service';
 import { User } from './model/user';
+import { LoginServiceService } from './service/login-service.service';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +10,18 @@ import { User } from './model/user';
 })
 export class AppComponent {
   title: String;
-  loggedIn: boolean = false;
-  isAdmin: boolean = false;
+
+  
   user: User;
 
-  constructor(private userService: UserService) {
-    this.title = "koffie app"
+  constructor(private userService: UserService, public loginService: LoginServiceService) {
+    this.title = "angularclient"
     this.user = new User;
+    loginService.admin = true;
   }
 
   ngOnInit(): void {
-    if (this.loggedIn === false) {
+    if (this.loginService.loggedIn == false) {
       localStorage.removeItem("token");
     }
   }
@@ -27,7 +29,7 @@ export class AppComponent {
 
 
   logout() {
-    this.loggedIn = false;
+    this.loginService.loggedIn = false;
     localStorage.removeItem("token");
   }
 }

@@ -30,10 +30,12 @@ export class CoffeeFormComponent implements OnInit {
     if (result === '{"response":"succes"}') {
       msg = "succesfully added the coffee";
       this.alertService.success(msg)
+      return msg;
     }
     else {
       msg = "coffee name already exists";
       this.alertService.error(msg)
+      return msg;
     }
 
   }

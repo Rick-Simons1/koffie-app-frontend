@@ -13,7 +13,7 @@ import { AlertService } from '../_alert';
   providedIn: 'root'
 })
 export class selectedCoffeeData {
-  public coffee: Coffee;
+  public coffee: any = {};
 }
 
 @Component({
@@ -57,18 +57,17 @@ export class CoffeeOrderPageComponent implements OnInit {
 
 @Component({
   selector: 'app-coffee-select',
-  templateUrl: './coffee-select/coffee-select.component.html',
-  styleUrls: ['./coffee-select/coffee-select.component.css']
+  templateUrl: './coffee-select.component.html',
+  styleUrls: ['./coffee-select.component.css']
 })
 export class CoffeeSelectComponent implements OnInit {
 
   selectedCoffee: Coffee;
   orderdetail: OrderDetail;
   coffees: Coffee[];
-  user: User;
+  user: any = {};
 
-  constructor(public dialogRef: MatDialogRef<CoffeeOrderPageComponent>,
-    @Inject(MAT_DIALOG_DATA) public coffeeData: selectedCoffeeData, private coffeeService: CoffeeService, public orderDetailService: OrderdetailService, private userdata: UserService, private alertService: AlertService) { }
+  constructor(public dialog: MatDialog, public coffeeData: selectedCoffeeData, private coffeeService: CoffeeService, public orderDetailService: OrderdetailService, private userdata: UserService, private alertService: AlertService) { }
 
   ngOnInit() {
     this.coffeeService.findAllCoffees().subscribe(data => {
@@ -79,7 +78,7 @@ export class CoffeeSelectComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialog.closeAll();
   }
   makeCoffeeOrderDetail(amountOfSugar: number, amountOfMilk: number, coffee: Coffee): void {
     this.orderdetail.amountOfMilk = amountOfMilk;
@@ -106,8 +105,9 @@ export class CoffeeSelectComponent implements OnInit {
   sendAlertMsg(result: string) {
     var msg = "";
     if (result === '{"response":"success"}') {
-      msg = "succesfully deleted the coffee";
+      msg = "succesfully added the order";
       this.alertService.success(msg)
+      return msg;
     }
   }
 

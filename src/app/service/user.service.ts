@@ -21,6 +21,7 @@ export class UserService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       observe: "response"
     }
+    console.log(httpOptions);
     this.userUrl = "http://localhost:8080/login"
     //@ts-ignore
     return this.http.post(this.userUrl, user, httpOptions)

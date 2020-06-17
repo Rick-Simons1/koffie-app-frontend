@@ -47,20 +47,7 @@ describe('LoginPageComponent', () => {
     expect(component.sendAlertMsg(200)).toBe("login succesfull")
   })
 
-  it('test', () => {
-    var user: User = new User();
-    user.username = "admin";
-    user.password = "password";
-    component.user = user
-    expect(fixture).toMatchSnapshot();
-    
-  });
 });
 
-describe('loginpage gui tests', () => {
-  it('redirect to account', () => {
-    
-  })
-});
 
 

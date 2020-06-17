@@ -28,7 +28,7 @@ export class OrderService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem("token") }),
       params: { userId: placedByUserId }
     }
-    this.orderUrl = 'http://localhost:8080/order/create';
+    this.orderUrl = 'http://localhost:8080/orders';
     return this.http.post(this.orderUrl, orderDetails, httpOptions)
   }
 

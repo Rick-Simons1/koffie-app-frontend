@@ -19,7 +19,7 @@ export class OrderdetailService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem("token") }),
     }
-    this.Url = 'http://localhost:8080/orderdetail/create';
+    this.Url = 'http://localhost:8080/orderdetails';
     console.log(orderDetail)
     return this.http.post<OrderDetail>(this.Url, orderDetail, httpOptions)
   }

@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let orderdetail of orderdetails">
-          <td>{{ orderdetail.coffeeName }}</td>
+          <td id="coffeeName">{{ orderdetail.coffeeName }}</td>
           <td>{{ orderdetail.coffeeCode }}</td>
           <td>{{ user.name }}</td>
           <td>{{ orderdetail.amountOfSugar }}</td>
@@ -25,7 +25,7 @@
       </tbody>
     </table>
     <div>
-      <button mat-button (click)="getSelectedOrderDetail()">select</button>
+      <button mat-button (click)="getSelectedOrderDetail()" id="selectCoffeeOrder">select</button>
     </div>
   </div>
 </div>
@@ -58,10 +58,10 @@
       </tbody>
     </table>
     <div>
-      <button mat-button (click)="makeOrder()">place order</button>
+      <button mat-button (click)="makeOrder()" id="makeCoffeeOrder">place order</button>
     </div>
     <div>
-      <button mat-button (click)="removeSelectedOrderDetail()">remove selected</button>
+      <button mat-button (click)="removeSelectedOrderDetail()" id="removeCoffeeOrder">remove selected</button>
     </div>
   </div>
 </div>

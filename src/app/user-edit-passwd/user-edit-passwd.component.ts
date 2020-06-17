@@ -34,7 +34,7 @@ export class UserEditPasswdComponent implements OnInit {
     }
     else {
       msg = "oldpassword didnt match the current password"
-      this.alertService.success(msg);
+      this.alertService.error(msg);
       return msg;
     }
 

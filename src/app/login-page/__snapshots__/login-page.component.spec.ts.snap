@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPageComponent test 1`] = `
+<app-login-page
+  alertService={[Function AlertService]}
+  loginService={[Function LoginServiceService]}
+  router={[Function Router]}
+  user={[Function User]}
+  userService={[Function UserService]}
+>
+  <div
+    class="card my-5"
+  >
+    <div
+      class="card-body"
+    >
+      <alert>
+        
+      </alert>
+      <form
+        class="ng-untouched ng-pristine ng-valid"
+        novalidate=""
+      >
+        <div
+          class="form-group"
+        >
+          <label
+            for="username"
+          >
+            username
+          </label>
+          <input
+            class="form-control ng-untouched ng-pristine ng-valid"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required=""
+            type="text"
+          />
+        </div>
+        <div
+          class="alert alert-danger"
+        >
+          username is required
+        </div>
+        <div
+          class="form-group"
+        >
+          <label
+            for="password"
+          >
+            password
+          </label>
+          <input
+            class="form-control ng-untouched ng-pristine ng-valid"
+            id="password"
+            name="password"
+            placeholder="Enter the password you want to use"
+            required=""
+            type="text"
+          />
+          <div
+            class="alert alert-danger"
+          >
+            the password is required
+          </div>
+        </div>
+        <button
+          class="btn btn-info"
+          type="submit"
+        >
+           Submit 
+        </button>
+      </form>
+    </div>
+  </div>
+</app-login-page>
+`;

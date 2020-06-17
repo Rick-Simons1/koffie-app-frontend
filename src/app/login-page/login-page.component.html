@@ -1,5 +1,6 @@
 <div class="card my-5">
   <div class="card-body">
+    <alert></alert>
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">
         <label for="username">username</label>
@@ -21,7 +22,7 @@
                required #password="ngModel">
         <div [hidden]="!password.pristine" class="alert alert-danger">the password is required</div>
       </div>
-      <button type="submit" [disabled]="!userForm.form.valid"
+      <button id="loginButton" type="submit" [disabled]="!userForm.form.valid"
               class="btn btn-info">
         Submit
       </button>

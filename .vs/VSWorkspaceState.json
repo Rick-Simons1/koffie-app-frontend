@@ -3,10 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\model",
+    "\\src\\app\\coffee-edit-form",
+    "\\src\\app\\coffee-list",
+    "\\src\\app\\coffee-order-page",
+    "\\src\\app\\login-page",
     "\\src\\app\\order-detail-list",
-    "\\src\\app\\service"
+    "\\src\\assets",
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\service\\orderdetail.service.ts",
+  "SelectedNode": "\\src\\app\\order-detail-list\\order-detail-list.component.html",
   "PreviewInSolutionExplorer": false
 }

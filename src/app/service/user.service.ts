@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/model/user';
 import { TagContentType } from '@angular/compiler';
 import { Observable } from 'rxjs';
+import { LoginPageComponent } from '../login-page/login-page.component';
+
 
 
 @Injectable({
@@ -18,12 +20,13 @@ export class UserService {
 
   public loginUser(user: User) {
     const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
       observe: "response"
     }
-    console.log(httpOptions);
     this.userUrl = "http://localhost:8080/login"
-    //@ts-ignore
+        //@ts-ignore
     return this.http.post(this.userUrl, user, httpOptions)
   }
 
@@ -47,7 +50,7 @@ export class UserService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem("token") }),
     }
-    this.userUrl = "http://localhost:8080/user/update"
+    this.userUrl = "http://localhost:8080/user"
     return this.http.post<User>(this.userUrl, user, httpOptions);
   }
 
@@ -56,7 +59,7 @@ export class UserService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem("token") }),
       params: { id: id, oldPassword: oldPasswd, newPassword: newPasswd }
     }
-    this.userUrl = "http://localhost:8080/user/update/password"
+    this.userUrl = "http://localhost:8080/user/password"
     return this.http.get(this.userUrl, httpOptions);
   }
 

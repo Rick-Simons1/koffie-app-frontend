@@ -27,7 +27,7 @@ export class CoffeeService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem("token") }),
     }
-    this.coffeeUrl = 'http://localhost:8080/Coffee/create';
+    this.coffeeUrl = 'http://localhost:8080/Coffees';
     return this.http.post<Coffee>(this.coffeeUrl, coffee, httpOptions)
   }
 
@@ -35,16 +35,18 @@ export class CoffeeService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem("token") }),
     }
-    this.coffeeUrl = 'http://localhost:8080/coffee/update';
+    this.coffeeUrl = 'http://localhost:8080/coffee';
     return this.http.post<Coffee>(this.coffeeUrl, coffee, httpOptions);
   }
 
   public deleteCoffee(coffee: Coffee) {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem("token") }),
+      params: { coffeeId: coffee.id }
     }
-    this.coffeeUrl = 'http://localhost:8080/coffee/delete';
-    return this.http.post<Coffee>(this.coffeeUrl, coffee, httpOptions);
+    this.coffeeUrl = 'http://localhost:8080/coffee';
+    //@ts-ignore
+    return this.http.get<Coffee>(this.coffeeUrl, httpOptions);
   }
 
   public getCoffeeById(coffeeId: string) {

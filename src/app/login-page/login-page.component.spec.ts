@@ -10,6 +10,7 @@ import { AppComponent } from '../app.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertModule } from '../_alert';
+import { browser } from 'protractor';
 
 describe('LoginPageComponent', () => {
   let component: LoginPageComponent;
@@ -38,4 +39,28 @@ describe('LoginPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('sould send error msg when credntials are wrong', () => {
+    expect(component.sendAlertMsg(403)).toBe("login credentials are wrong please try again")
+  })
+  it('sould send succes msg when credntials are right', () => {
+    expect(component.sendAlertMsg(200)).toBe("login succesfull")
+  })
+
+  it('test', () => {
+    var user: User = new User();
+    user.username = "admin";
+    user.password = "password";
+    component.user = user
+    expect(fixture).toMatchSnapshot();
+    
+  });
 });
+
+describe('loginpage gui tests', () => {
+  it('redirect to account', () => {
+    
+  })
+});
+
+

@@ -15,7 +15,7 @@
           <td>{{ coffee.coffeeName }}</td>
           <td>{{ coffee.coffeeDescription }}</td>
           <td>{{ coffee.coffeePrice }}</td>
-          <td><a (click)="setSelectedCoffee(coffee); navigate();" class="btn btn-info">edit</a><a (click)="deleteConfirmation(coffee)" class="btn btn-info">delete</a></td>
+          <td><a (click)="setSelectedCoffee(coffee); navigate();" class="btn btn-info" id="edit">edit</a><a (click)="deleteConfirmation(coffee)" class="btn btn-info" id="delete">delete</a></td>
         </tr>
       </tbody>
     </table>

@@ -9,22 +9,22 @@
               <a routerLink="/login" *ngIf="!loginService.loggedIn" class="btn btn-info">login</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/register" *ngIf="!loginService.loggedIn" class="btn btn-info">register</a>
+              <a routerLink="/register" *ngIf="!loginService.loggedIn" class="btn btn-info" id="register">register</a>
             </li>
             <li class="list-inline-item">
               <a routerLink="/login" *ngIf="loginService.loggedIn" class="btn btn-info" (click)="logout()">logout</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/coffees" *ngIf="(loginService.loggedIn && loginService.admin)" class="btn btn-info">List coffees</a>
+              <a routerLink="/coffees" *ngIf="(loginService.loggedIn && loginService.admin)" class="btn btn-info" id="coffeeList">List coffees</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/addCoffee" *ngIf="(loginService.loggedIn && loginService.admin)" class="btn btn-info">Add coffee</a>
+              <a routerLink="/addCoffee" *ngIf="(loginService.loggedIn && loginService.admin)" class="btn btn-info" id="addCoffee">Add coffee</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/orderCoffee" *ngIf="loginService.loggedIn" class="btn btn-info">order coffee</a>
+              <a routerLink="/orderCoffee" *ngIf="loginService.loggedIn" class="btn btn-info" id="orderCoffee">order coffee</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/orderDetails" *ngIf="loginService.loggedIn" class="btn btn-info">make order</a>
+              <a routerLink="/orderDetails" *ngIf="loginService.loggedIn" class="btn btn-info"id="makeOrder">make order</a>
             </li>
             <li class="list-inline-item">
               <a routerLink="/account" *ngIf="loginService.loggedIn" class="btn btn-info">account page</a>

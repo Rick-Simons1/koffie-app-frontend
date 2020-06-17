@@ -15,7 +15,7 @@ export class AppComponent {
   user: User;
 
   constructor(private userService: UserService, public loginService: LoginServiceService) {
-    this.title = "angularclient"
+    this.title = "Koffie-app"
     this.user = new User;
     loginService.admin = true;
   }
@@ -23,6 +23,7 @@ export class AppComponent {
   ngOnInit(): void {
     if (this.loginService.loggedIn == false) {
       localStorage.removeItem("token");
+      console.log("removed");
     }
   }
 
@@ -31,5 +32,6 @@ export class AppComponent {
   logout() {
     this.loginService.loggedIn = false;
     localStorage.removeItem("token");
+    console.log("loggedout");
   }
 }

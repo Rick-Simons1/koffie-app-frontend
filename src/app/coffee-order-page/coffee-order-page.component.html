@@ -3,12 +3,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <nav class="navbar-nav">
       <alert></alert>
-      <li class="nav-item active">
-        <button mat-raised-button (click)="openDialog()" [disabled]="isDialogOpen == true">select Coffee</button>
-      </li>
-    </ul>
+        <button mat-raised-button (click)="openDialog()" [disabled]="isDialogOpen == true" id="coffeeDialog">select Coffee</button>
+    </nav>
   </div>
 </nav>
 
